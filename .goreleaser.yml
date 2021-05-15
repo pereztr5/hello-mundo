@@ -30,3 +30,11 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+dockers:
+  - 
+    dockerfile: Dockerfile.prod
+    use_buildx: true
+    image_templates:
+    - "pereztr5/hello-mundo:latest"
+    - "pereztr5/hello-mundo:{{ .Tag }}"
+    skip_push: false
